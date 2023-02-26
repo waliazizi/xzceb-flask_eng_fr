@@ -1,4 +1,4 @@
-#Importing required libraries from IBM watson translator technology.
+#This module uses the IBM Watson Language Translator API to translate text from English to French and vice versa.
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import os
@@ -11,7 +11,7 @@ load_dotenv()
 API_KEY = os.environ['API_KEY']
 URL = os.environ['URL']     
 
-#Strings to choose language from and into.
+#Strings to choose language From and Into.
 EN_FR = 'en-fr'
 FR_EN = 'fr-en'
 
@@ -32,10 +32,10 @@ def frenchToEnglish(english_text):
         text=english_text,model_id = FR_EN).get_result()
     return english_text['translations'][0]['translation']
 
-#Takes the strings of English and stores translated string in results veriable.
-result = englishToFrench('Hello')
-print(result)
+# #Takes the strings of English and stores translated string in results veriable.
+# result = englishToFrench('Hello')
+# print(result)
 
-#Takes the strings of Franch and stores translated string in results veriable.
-result = frenchToEnglish('Bonjour')
-print(result)
+# #Takes the strings of Franch and stores translated string in results veriable.
+# result = frenchToEnglish('Bonjour')
+# print(result)
